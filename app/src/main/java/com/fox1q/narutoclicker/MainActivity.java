@@ -14,14 +14,9 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton enemy;
-    ImageButton restart;
+    ImageButton enemy, restart;
     Button nextLocation;
-    TextView timer;
-    TextView healthView;
-    TextView clickDamage;
-    TextView goldView;
-    TextView locationEnemies;
+    TextView timer, healthView, clickDamage, goldView, locationEnemies;
     int dpc = 5; // damage per click - урон с 1 клика
     int hp = 10; // начальное здоровье обычных врагов
     int hpBoost = 30; // увеличение здоровья обычных врагов
@@ -65,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         timer = (TextView) findViewById(R.id.timer);
-
         clickDamage = (TextView) findViewById(R.id.clickDamage);
         clickDamage.setText("Урон: " + dpc);
         goldView = (TextView) findViewById(R.id.goldView);
@@ -170,7 +164,6 @@ public class MainActivity extends AppCompatActivity {
         if (defeatedEnemies[currentLocation] >= checkCountOfEnemies(enemies, currentLocation)) {
             ++currentLocation;
             checkLocationForBoss(bossTimer);
-            hp = hp + hpBoost;
             dpc = dpc + 3;
             currentHP = hp;
             enemyCount = 0;
